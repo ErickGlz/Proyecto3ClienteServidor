@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital - Paciente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h1>🏥 Hospital San Miguel</h1>
+        <h2>Sistema de Turnos</h2>
+
+        <div class="card">
+            <h3>Estado de recepción</h3>
+            <p id="recepcion">🟢 Abierta</p>
+        </div>
+
+        <div class="card">
+            <button id="btnSolicitar">
+                Solicitar Turno
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>Mi turno</h3>
+            <h1 id="miTurno">---</h1>
+
+            <p>
+                Personas antes de mí:
+            </p>
+
+            <h2 id="personasAntes">0</h2>
+
+            <p id="estadoTurno">
+                Esperando...
+            </p>
+        </div>
+
+        <div class="card">
+            <button id="btnCancelar">
+                Cancelar Turno
+            </button>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+    <script src="paciente.js"></script>
+
+</body>
+</html>

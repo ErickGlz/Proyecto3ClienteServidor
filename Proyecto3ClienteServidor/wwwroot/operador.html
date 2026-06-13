@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital - Operador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h1>🏥 Panel del Operador</h1>
+
+        <div class="card">
+            <h3>Recepción</h3>
+
+            <h2 id="estadoRecepcion">
+                🟢 ABIERTA
+            </h2>
+        </div>
+
+        <div class="card">
+            <h3>Clientes conectados</h3>
+
+            <h1 id="conectados">
+                0
+            </h1>
+        </div>
+
+        <div class="card">
+
+            <h3>Fila de espera</h3>
+
+            <ul id="listaTurnos">
+            </ul>
+
+        </div>
+
+        <div class="botones">
+
+            <button id="btnSiguiente">
+                Llamar siguiente
+            </button>
+
+            <button id="btnRecepcion">
+                Abrir/Cerrar recepción
+            </button>
+
+            <button id="btnReset">
+                Resetear sistema
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+    <script src="operador.js"></script>
+
+</body>
+</html>
