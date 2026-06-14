@@ -1,4 +1,5 @@
-﻿using HospitalServer.Services;
+﻿using HospitalServer.Models;
+using HospitalServer.Services;
 using Microsoft.AspNetCore.SignalR;
 
 namespace HospitalServer.Hubs
@@ -103,6 +104,11 @@ namespace HospitalServer.Hubs
             await Clients.All.SendAsync(
                 "ActualizarFila",
                 turnos.ObtenerFila());
+        }
+        public async Task<Turno?> ObtenerTurnoActivo(string clienteId)
+        {
+            return turnos.ObtenerFila()
+                .FirstOrDefault(t => t.ClienteId == clienteId && t.Estado == "EnEspera");
         }
     }
 }

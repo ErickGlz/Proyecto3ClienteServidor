@@ -60,15 +60,25 @@ conexion.on("ActualizarFila", function (fila) {
 });
 
 conexion.start()
-    .then(function () {
+    .then(async function () {
 
         console.log("Conectado");
+
+        const turno = await conexion.invoke("ObtenerTurnoActivo", clienteId);
+
+        if (turno) {
+
+            document.getElementById("miTurno").textContent = turno.numero;
+
+            document.getElementById("estadoTurno").textContent =
+                "⏳ Turno activo (recuperado)";
+
+        }
 
     })
     .catch(function (err) {
 
         console.error(err);
-
     });
 
 document.getElementById("btnSolicitar")
@@ -77,7 +87,6 @@ document.getElementById("btnSolicitar")
         conexion.invoke("PedirTurno", clienteId);
 
     });
-
 document.getElementById("btnCancelar")
     .addEventListener("click", function () {
 
