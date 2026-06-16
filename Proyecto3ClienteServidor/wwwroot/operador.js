@@ -2,7 +2,6 @@
     .withUrl("/turnosHub")
     .build();
 
-// Actualizar lista de turnos
 conexion.on("ActualizarFila", function (fila) {
 
     const lista = document.getElementById("listaTurnos");
@@ -21,14 +20,12 @@ conexion.on("ActualizarFila", function (fila) {
 
 });
 
-// Actualizar clientes conectados
 conexion.on("ActualizarConectados", function (cantidad) {
 
     document.getElementById("conectados").textContent = cantidad;
 
 });
 
-// Estado de la recepción
 conexion.on("EstadoRecepcion", function (abierta) {
 
     const estado = document.getElementById("estadoRecepcion");
@@ -42,14 +39,12 @@ conexion.on("EstadoRecepcion", function (abierta) {
 
 });
 
-// Si no hay turnos
 conexion.on("FilaVacia", function () {
 
     alert("No hay turnos en espera.");
 
 });
 
-// Iniciar conexión
 conexion.start()
     .then(function () {
 
@@ -62,7 +57,6 @@ conexion.start()
 
     });
 
-// Botón llamar siguiente
 document.getElementById("btnSiguiente")
     .addEventListener("click", function () {
 
@@ -70,10 +64,8 @@ document.getElementById("btnSiguiente")
 
     });
 
-// Variable para saber si está abierta
 let abierta = true;
 
-// Botón abrir/cerrar
 document.getElementById("btnRecepcion")
     .addEventListener("click", function () {
 
@@ -91,7 +83,6 @@ document.getElementById("btnRecepcion")
 
     });
 
-// Botón reiniciar
 document.getElementById("btnReset")
     .addEventListener("click", function () {
 
