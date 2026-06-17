@@ -113,5 +113,6 @@ namespace HospitalServer.Services
             if (ClientesConectados > 0)
                 ClientesConectados--;
         }
+
     }
 }

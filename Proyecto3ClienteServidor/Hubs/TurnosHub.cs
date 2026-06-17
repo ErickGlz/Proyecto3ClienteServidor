@@ -15,11 +15,7 @@ namespace HospitalServer.Hubs
 
         public override async Task OnConnectedAsync()
         {
-            turnos.ClienteConectado();
-
-            await Clients.All.SendAsync(
-                "ActualizarConectados",
-                turnos.ClientesConectados);
+         
 
             await base.OnConnectedAsync();
         }
@@ -109,6 +105,14 @@ namespace HospitalServer.Hubs
         {
             return turnos.ObtenerFila()
                 .FirstOrDefault(t => t.ClienteId == clienteId && t.Estado == "EnEspera");
+        }
+        public async Task RegistrarPaciente()
+        {
+            turnos.ClienteConectado();
+
+            await Clients.All.SendAsync(
+                "ActualizarConectados",
+                turnos.ClientesConectados);
         }
     }
 }

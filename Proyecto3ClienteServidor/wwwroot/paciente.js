@@ -64,6 +64,8 @@ conexion.start()
 
         console.log("Conectado");
 
+        await conexion.invoke("RegistrarPaciente");
+
         const turno = await conexion.invoke("ObtenerTurnoActivo", clienteId);
 
         if (turno) {
